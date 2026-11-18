@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cjcxym1glxil3"]
+
+[ext_resource type="Script" uid="uid://c82kbwgjmm2nx" path="res://examples/movement_systems/basic_movement/player_basic_movement.gd" id="1_rhqns"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qyx7c"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_657aw"]
+material = SubResource("StandardMaterial3D_qyx7c")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s4dih"]
+
+[node name="PlayerBasicMovement" type="CharacterBody3D" unique_id=1336935567]
+script = ExtResource("1_rhqns")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2016843905]
+mesh = SubResource("CapsuleMesh_657aw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=134018382]
+shape = SubResource("CapsuleShape3D_s4dih")

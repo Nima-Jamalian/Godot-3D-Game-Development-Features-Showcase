@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://bxgxm067q4td3"]
+
+[ext_resource type="Material" uid="uid://b1wfhv8wkmp25" path="res://resources/materials/ground_prototype_standard_material_3d.tres" id="1_73mxo"]
+[ext_resource type="Script" uid="uid://b14cu4g6jc30s" path="res://examples/transform/transform.gd" id="1_dem3l"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_16hfp"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_gxv1x"]
+sky_material = SubResource("ProceduralSkyMaterial_16hfp")
+
+[sub_resource type="Environment" id="Environment_3253f"]
+background_mode = 1
+background_color = Color(0, 0.77554214, 0.93769556, 1)
+sky = SubResource("Sky_gxv1x")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dem3l"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_wr7ek"]
+material = SubResource("StandardMaterial3D_dem3l")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktdhy"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_657aw"]
+material = SubResource("StandardMaterial3D_ktdhy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4hg1q"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_dem3l"]
+material = SubResource("StandardMaterial3D_4hg1q")
+
+[node name="Node3D" type="Node3D" unique_id=304735483]
+script = ExtResource("1_dem3l")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=255975161]
+environment = SubResource("Environment_3253f")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=521332519]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=544270159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.3141394, 7.6747932)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=553448651]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+collision_layer = 3
+size = Vector3(20, 1, 20)
+material = ExtResource("1_73mxo")
+
+[node name="Sphere" type="MeshInstance3D" parent="." unique_id=1560373180]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -7)
+mesh = SubResource("SphereMesh_wr7ek")
+
+[node name="Cube" type="MeshInstance3D" parent="." unique_id=892142050]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -7)
+mesh = SubResource("BoxMesh_657aw")
+
+[node name="Capsul" type="MeshInstance3D" parent="." unique_id=132511684]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, -7)
+mesh = SubResource("CapsuleMesh_dem3l")
+
+[node name="Control" type="Control" parent="." unique_id=897719548]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control" unique_id=1023413055]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -266.875
+offset_right = 266.875
+offset_bottom = 28.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Control/Panel" unique_id=1565475730]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -264.5
+offset_top = -11.5
+offset_right = 264.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Transform objects by changing their position, rotation, and scale."
+horizontal_alignment = 1
