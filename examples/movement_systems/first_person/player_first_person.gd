@@ -100,8 +100,6 @@ func handle_collisions() -> void:
 			collider.apply_central_impulse(push_direction * 2.0)
 
 
-
-
 ## Uncommented version of the code
 #extends CharacterBody3D
 #
