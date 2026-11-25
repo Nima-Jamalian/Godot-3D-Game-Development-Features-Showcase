@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://caqqsmpktfqiu"]
+
+[ext_resource type="PackedScene" uid="uid://es6qa3xuqul8" path="res://assets/models/platformer_items/coin-gold.glb" id="1_61a6t"]
+[ext_resource type="Script" uid="uid://cfw5txrsaaohd" path="res://examples/collectable/collectable_coin_gold.gd" id="2_c0uwh"]
+[ext_resource type="AudioStream" uid="uid://cftnsf1reojgt" path="res://assets/audios/coin_collect_chime.wav" id="3_nactu"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_61a6t"]
+radius = 0.2
+
+[node name="coin-gold" unique_id=2143653872 instance=ExtResource("1_61a6t")]
+script = ExtResource("2_c0uwh")
+
+[node name="coin-gold" parent="." index="0" unique_id=958427264]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="." index="1" unique_id=305478345]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=250011229]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.4, 0)
+shape = SubResource("SphereShape3D_61a6t")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2" unique_id=1138765993]
+stream = ExtResource("3_nactu")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

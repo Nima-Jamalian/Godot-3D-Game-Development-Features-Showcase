@@ -26,9 +26,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			camera_pivot.rotation_degrees.x -= event.relative.y * mouse_sensitivity
 
 			# Limit vertical camera rotation
-			camera_pivot.rotation_degrees.x = clamp(
-				camera_pivot.rotation_degrees.x, -60.0, 60.0
-			)
+			camera_pivot.rotation_degrees.x = clamp(camera_pivot.rotation_degrees.x, -60.0, 60.0)
 
 	# Release or capture the mouse
 	if event.is_action_pressed("ui_cancel"):
@@ -47,10 +45,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = jump_velocity
 
 	# Get movement input
-	var input_dir = Input.get_vector(
-		"move_left", "move_right",
-		"move_forward", "move_backward"
-	)
+	var input_dir = Input.get_vector("move_left", "move_right","move_forward", "move_backward")
 
 	# Calculate movement relative to the camera's horizontal rotation
 	var direction = Vector3(input_dir.x, 0, input_dir.y)
