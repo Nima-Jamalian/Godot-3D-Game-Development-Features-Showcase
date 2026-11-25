@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://d4mgw0rn0pwts"]
+
+[ext_resource type="PackedScene" uid="uid://d0hm6r5f2rq48" path="res://assets/models/platformer_items/heart.glb" id="1_pugvs"]
+
+[node name="heart" unique_id=1492391803 instance=ExtResource("1_pugvs")]

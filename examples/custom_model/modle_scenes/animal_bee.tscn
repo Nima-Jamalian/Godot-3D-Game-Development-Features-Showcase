@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ct4xvw4n16jwm"]
+
+[ext_resource type="PackedScene" uid="uid://dflqon4klkpbm" path="res://assets/models/animals/animal-bee.glb" id="1_hrdj2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hrdj2"]
+radius = 0.8975891
+
+[node name="animal-bee" unique_id=294465187 instance=ExtResource("1_hrdj2")]
+
+[node name="wing-left" parent="animal-bee/root/body" parent_id_path=PackedInt32Array(1369243621) index="0" unique_id=824750212]
+transform = Transform3D(0.49999985, -0.86602545, 0, 0.86602545, 0.49999985, 0, 0, 0, 1, 0.19649982, 1.3192949, -0.022000015)
+
+[node name="wing-right" parent="animal-bee/root/body" parent_id_path=PackedInt32Array(1369243621) index="1" unique_id=833736627]
+transform = Transform3D(0.5, 0.8660253, 0, -0.8660253, 0.5, 0, 0, 0, 1, -0.19649982, 1.3192949, -0.022000015)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2" unique_id=1105806316]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.73843396, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1723020095]
+shape = SubResource("SphereShape3D_hrdj2")

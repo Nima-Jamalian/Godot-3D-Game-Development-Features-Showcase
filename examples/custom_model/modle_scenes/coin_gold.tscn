@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cvvah5slukbqy"]
+
+[ext_resource type="PackedScene" uid="uid://es6qa3xuqul8" path="res://assets/models/platformer_items/coin-gold.glb" id="1_8ni68"]
+
+[node name="coin-gold" unique_id=2143653872 instance=ExtResource("1_8ni68")]

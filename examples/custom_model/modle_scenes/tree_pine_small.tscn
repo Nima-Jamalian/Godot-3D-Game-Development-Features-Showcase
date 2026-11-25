@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://0onp0rxvw4ay"]
+
+[ext_resource type="PackedScene" uid="uid://dgua1vd11iqoc" path="res://assets/models/platformer_items/tree-pine-small.glb" id="1_o8w6x"]
+
+[node name="tree-pine-small" unique_id=879778173 instance=ExtResource("1_o8w6x")]

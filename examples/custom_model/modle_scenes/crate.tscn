@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dfl05m7wpeeyx"]
+
+[ext_resource type="PackedScene" uid="uid://cqiinin7ucfnn" path="res://assets/models/platformer_items/crate.glb" id="1_lovsx"]
+
+[node name="crate" unique_id=1164544495 instance=ExtResource("1_lovsx")]

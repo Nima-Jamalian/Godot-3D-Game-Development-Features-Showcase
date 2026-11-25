@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://5gsv6fae1ey5"]
+
+[ext_resource type="PackedScene" uid="uid://c78ewf0i5snve" path="res://assets/models/animals/animal-fox.glb" id="1_81c0t"]
+[ext_resource type="Script" uid="uid://ff2vlf0yurh0" path="res://examples/custom_model/animal_fox.gd" id="2_shp58"]
+
+[node name="animal-fox" unique_id=1261627065 instance=ExtResource("1_81c0t")]
+script = ExtResource("2_shp58")
+
+[node name="body" parent="animal-fox/root" parent_id_path=PackedInt32Array(1330239008) index="0" unique_id=789384565]
+transform = Transform3D(0.9951341, -0.06958654, -0.069756456, 0.069756456, 0.9975641, 2.3283064e-10, 0.06958654, -0.004865963, 0.9975641, 1.573182e-08, 0.18124998, -3.8083503e-08)
+
+[node name="tail" parent="animal-fox/root/body" index="0" unique_id=931999778]
+transform = Transform3D(0.93969256, 0.34202012, 0, -0.34202012, 0.93969256, 0, 0, 0, 1, 0, 0.53749996, -0.4950962)
+
+[node name="leg-back-left" parent="animal-fox/root" parent_id_path=PackedInt32Array(1330239008) index="1" unique_id=227919246]
+transform = Transform3D(1, 0, 0, 0, 0.64278764, -0.76604444, 0, 0.76604444, 0.64278764, 0.25, 0.3, -0.25)
+
+[node name="leg-back-right" parent="animal-fox/root" parent_id_path=PackedInt32Array(1330239008) index="2" unique_id=1514045937]
+transform = Transform3D(1, 0, 0, 0, 0.64278764, 0.76604444, 0, -0.76604444, 0.64278764, -0.25, 0.3, -0.25)
+
+[node name="leg-front-left" parent="animal-fox/root" parent_id_path=PackedInt32Array(1330239008) index="3" unique_id=765988816]
+transform = Transform3D(1, 0, 0, 0, 0.64278764, 0.76604444, 0, -0.76604444, 0.64278764, 0.25, 0.3, 0.25)
+
+[node name="leg-front-right" parent="animal-fox/root" parent_id_path=PackedInt32Array(1330239008) index="4" unique_id=527144947]
+transform = Transform3D(1, 0, 0, 0, 0.64278764, -0.76604444, 0, 0.76604444, 0.64278764, -0.25, 0.3, 0.25)
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=520643688]
+unique_name_in_owner = true

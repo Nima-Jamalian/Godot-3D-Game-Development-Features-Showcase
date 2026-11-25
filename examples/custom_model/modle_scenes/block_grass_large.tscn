@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cqj7rwmyplrda"]
+
+[ext_resource type="PackedScene" uid="uid://dx04c5t8vejw1" path="res://assets/models/platformer_items/block-grass-large.glb" id="1_7jcnc"]
+
+[node name="block-grass-large" unique_id=1653502709 instance=ExtResource("1_7jcnc")]

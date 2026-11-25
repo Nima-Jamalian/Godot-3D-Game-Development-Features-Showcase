@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://b8fxkld11ql5f"]
+
+[ext_resource type="Material" uid="uid://b1wfhv8wkmp25" path="res://resources/materials/ground_prototype_standard_material_3d.tres" id="2_1ddxw"]
+[ext_resource type="PackedScene" uid="uid://5gsv6fae1ey5" path="res://examples/custom_model/modle_scenes/animal_fox.tscn" id="2_wqb02"]
+[ext_resource type="PackedScene" uid="uid://cy36aygvs66pn" path="res://examples/custom_model/modle_scenes/gobot_skin.tscn" id="3_adds4"]
+[ext_resource type="PackedScene" uid="uid://cqj7rwmyplrda" path="res://examples/custom_model/modle_scenes/block_grass_large.tscn" id="4_xcu8b"]
+[ext_resource type="PackedScene" uid="uid://cvvah5slukbqy" path="res://examples/custom_model/modle_scenes/coin_gold.tscn" id="5_8ub1h"]
+[ext_resource type="PackedScene" uid="uid://dfl05m7wpeeyx" path="res://examples/custom_model/modle_scenes/crate.tscn" id="6_nm20s"]
+[ext_resource type="PackedScene" uid="uid://d4mgw0rn0pwts" path="res://examples/custom_model/modle_scenes/heart.tscn" id="7_q3ndt"]
+[ext_resource type="PackedScene" uid="uid://0onp0rxvw4ay" path="res://examples/custom_model/modle_scenes/tree_pine_small.tscn" id="8_e2q6b"]
+[ext_resource type="PackedScene" uid="uid://cgh0k80tcpept" path="res://examples/movement_systems/first_person/player_first_person.tscn" id="9_0y36r"]
+[ext_resource type="PackedScene" uid="uid://ct4xvw4n16jwm" path="res://examples/custom_model/modle_scenes/animal_bee.tscn" id="10_ydbjb"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_16hfp"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_gxv1x"]
+sky_material = SubResource("ProceduralSkyMaterial_16hfp")
+
+[sub_resource type="Environment" id="Environment_3253f"]
+background_mode = 1
+background_color = Color(0, 0.77554214, 0.93769556, 1)
+sky = SubResource("Sky_gxv1x")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+glow_enabled = true
+
+[node name="Node3D" type="Node3D" unique_id=304735483]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=255975161]
+environment = SubResource("Environment_3253f")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=521332519]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="PlayerFirstPerson" parent="." unique_id=1581087534 instance=ExtResource("9_0y36r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04708779, 0.9999995, 4.8802705)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=553448651]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+collision_layer = 3
+size = Vector3(20, 1, 20)
+material = ExtResource("2_1ddxw")
+
+[node name="animal-fox" parent="." unique_id=1261627065 instance=ExtResource("2_wqb02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.607)
+
+[node name="GobotSkin" parent="." unique_id=387738634 instance=ExtResource("3_adds4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9881358, 0, 0.152)
+
+[node name="block-grass-large" parent="." unique_id=1653502709 instance=ExtResource("4_xcu8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.126)
+
+[node name="coin-gold" parent="." unique_id=2143653872 instance=ExtResource("5_8ub1h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="crate" parent="." unique_id=1164544495 instance=ExtResource("6_nm20s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="heart" parent="." unique_id=1492391803 instance=ExtResource("7_q3ndt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="tree-pine-small" parent="." unique_id=879778173 instance=ExtResource("8_e2q6b")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -5.571163, 0, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=982965778]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1023413055]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -266.875
+offset_right = 266.875
+offset_bottom = 28.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel" unique_id=1565475730]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -264.5
+offset_top = -11.5
+offset_right = 264.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Custom Models"
+horizontal_alignment = 1
+
+[node name="animal-bee" parent="." unique_id=294465187 instance=ExtResource("10_ydbjb")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.1381016, 0.15387034, 0.04850471)
